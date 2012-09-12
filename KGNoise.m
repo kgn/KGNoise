@@ -18,7 +18,7 @@
     static CGImageRef noiseImageRef = nil;
     static dispatch_once_t oncePredicate;
     dispatch_once(&oncePredicate, ^{
-        NSUInteger width = 124, height = width;
+        NSUInteger width = 128, height = width;
         NSUInteger size = width*height;
         char *rgba = (char *)malloc(size); srand(115);
         for(NSUInteger i=0; i < size; ++i){rgba[i] = rand()%256;}
