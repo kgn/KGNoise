@@ -1,6 +1,6 @@
 //
 //  KGNoise.m
-//  KGMacNoiseExample
+//  KGNoise
 //
 //  Created by David Keegan on 9/11/12.
 //  Copyright (c) 2012 David Keegan. All rights reserved.
@@ -82,9 +82,9 @@
 
 - (void)setup{
 #if TARGET_OS_IPHONE
-    self.backgroundColor = [UIColor blackColor];
+    self.backgroundColor = [UIColor grayColor];
 #else
-    self.backgroundColor = [NSColor blackColor];
+    self.backgroundColor = [NSColor grayColor];
 #endif
     self.noiseOpacity = 0.1;
     self.noiseBlendMode = kCGBlendModeScreen;

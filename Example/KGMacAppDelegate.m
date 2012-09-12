@@ -8,12 +8,12 @@
 
 #import "KGMacAppDelegate.h"
 
-@implementation KGAppDelegate
+@implementation KGMacAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification{
     self.viewLeft.backgroundColor = [NSColor darkGrayColor];
-    self.viewLeft.noiseOpacity = 0.1;
     self.viewLeft.noiseBlendMode = kCGBlendModeMultiply;
+    self.viewLeft.noiseOpacity = 0.1;
 
     self.viewRight.backgroundColor = [NSColor lightGrayColor];
     self.viewRight.noiseOpacity = 0.2;

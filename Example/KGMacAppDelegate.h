@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "KGNoise.h"
 
-@interface KGAppDelegate : NSObject <NSApplicationDelegate>
+@interface KGMacAppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
 @property (weak) IBOutlet KGNoiseView *viewLeft;

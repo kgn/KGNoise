@@ -7,14 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7324C77A16006DD4000A0863 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7324C77916006DD4000A0863 /* UIKit.framework */; };
+		7324C77C16006DDF000A0863 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7324C77B16006DDF000A0863 /* Foundation.framework */; };
+		7324C77E16006DFC000A0863 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7324C77D16006DFC000A0863 /* CoreGraphics.framework */; };
 		73CF1C1B1600604E006D9180 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73CF1C1A1600604E006D9180 /* Cocoa.framework */; };
 		73CF1C4016006116006D9180 /* KGMacAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CF1C3E16006116006D9180 /* KGMacAppDelegate.m */; };
 		73CF1C4116006116006D9180 /* MacMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CF1C3F16006116006D9180 /* MacMain.m */; };
 		73CF1C4316006181006D9180 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73CF1C4216006181006D9180 /* MainMenu.xib */; };
 		73CF1C47160061B7006D9180 /* KGNoise.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CF1C46160061B7006D9180 /* KGNoise.m */; };
+		73CF1C81160069A1006D9180 /* iOSMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CF1C7C160069A1006D9180 /* iOSMain.m */; };
+		73CF1C82160069A1006D9180 /* KGIOSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CF1C7E160069A1006D9180 /* KGIOSAppDelegate.m */; };
+		73CF1C8416006B6B006D9180 /* KGNoise.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CF1C46160061B7006D9180 /* KGNoise.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7324C77916006DD4000A0863 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		7324C77B16006DDF000A0863 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7324C77D16006DFC000A0863 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		73CF1C161600604E006D9180 /* KGMacNoiseExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KGMacNoiseExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73CF1C1A1600604E006D9180 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		73CF1C1D1600604E006D9180 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -25,6 +34,10 @@
 		73CF1C4216006181006D9180 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		73CF1C45160061B7006D9180 /* KGNoise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KGNoise.h; path = ../KGNoise.h; sourceTree = "<group>"; };
 		73CF1C46160061B7006D9180 /* KGNoise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KGNoise.m; path = ../KGNoise.m; sourceTree = "<group>"; };
+		73CF1C5A160068AD006D9180 /* KGIOSNoiseEample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KGIOSNoiseEample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		73CF1C7C160069A1006D9180 /* iOSMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iOSMain.m; sourceTree = "<group>"; };
+		73CF1C7D160069A1006D9180 /* KGIOSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGIOSAppDelegate.h; sourceTree = "<group>"; };
+		73CF1C7E160069A1006D9180 /* KGIOSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGIOSAppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,14 +49,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		73CF1C57160068AD006D9180 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7324C77E16006DFC000A0863 /* CoreGraphics.framework in Frameworks */,
+				7324C77C16006DDF000A0863 /* Foundation.framework in Frameworks */,
+				7324C77A16006DD4000A0863 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		73CF1C0B1600604E006D9180 = {
 			isa = PBXGroup;
 			children = (
-				73CF1C44160061A2006D9180 /* KGNoise */,
+				73CF1C45160061B7006D9180 /* KGNoise.h */,
+				73CF1C46160061B7006D9180 /* KGNoise.m */,
 				73CF1C3C160060C5006D9180 /* Mac Example */,
+				73CF1C7B16006936006D9180 /* iOS Example */,
 				73CF1C171600604E006D9180 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				73CF1C161600604E006D9180 /* KGMacNoiseExample.app */,
+				73CF1C5A160068AD006D9180 /* KGIOSNoiseEample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,13 +104,25 @@
 			name = "Mac Example";
 			sourceTree = "<group>";
 		};
-		73CF1C44160061A2006D9180 /* KGNoise */ = {
+		73CF1C5C160068AD006D9180 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				73CF1C45160061B7006D9180 /* KGNoise.h */,
-				73CF1C46160061B7006D9180 /* KGNoise.m */,
+				7324C77D16006DFC000A0863 /* CoreGraphics.framework */,
+				7324C77B16006DDF000A0863 /* Foundation.framework */,
+				7324C77916006DD4000A0863 /* UIKit.framework */,
 			);
-			name = KGNoise;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		73CF1C7B16006936006D9180 /* iOS Example */ = {
+			isa = PBXGroup;
+			children = (
+				73CF1C7C160069A1006D9180 /* iOSMain.m */,
+				73CF1C7D160069A1006D9180 /* KGIOSAppDelegate.h */,
+				73CF1C7E160069A1006D9180 /* KGIOSAppDelegate.m */,
+				73CF1C5C160068AD006D9180 /* Frameworks */,
+			);
+			name = "iOS Example";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -107,6 +145,23 @@
 			productReference = 73CF1C161600604E006D9180 /* KGMacNoiseExample.app */;
 			productType = "com.apple.product-type.application";
 		};
+		73CF1C59160068AD006D9180 /* KGIOSNoiseEample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 73CF1C78160068AD006D9180 /* Build configuration list for PBXNativeTarget "KGIOSNoiseEample" */;
+			buildPhases = (
+				73CF1C56160068AD006D9180 /* Sources */,
+				73CF1C57160068AD006D9180 /* Frameworks */,
+				73CF1C58160068AD006D9180 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KGIOSNoiseEample;
+			productName = KGIOSNoiseEample;
+			productReference = 73CF1C5A160068AD006D9180 /* KGIOSNoiseEample.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -117,7 +172,7 @@
 				LastUpgradeCheck = 0440;
 				ORGANIZATIONNAME = "David Keegan";
 			};
-			buildConfigurationList = 73CF1C101600604E006D9180 /* Build configuration list for PBXProject "KGMacNoiseExample" */;
+			buildConfigurationList = 73CF1C101600604E006D9180 /* Build configuration list for PBXProject "KGNoiseExample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -130,6 +185,7 @@
 			projectRoot = "";
 			targets = (
 				73CF1C151600604E006D9180 /* KGMacNoiseExample */,
+				73CF1C59160068AD006D9180 /* KGIOSNoiseEample */,
 			);
 		};
 /* End PBXProject section */
@@ -143,6 +199,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		73CF1C58160068AD006D9180 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -153,6 +216,16 @@
 				73CF1C4016006116006D9180 /* KGMacAppDelegate.m in Sources */,
 				73CF1C4116006116006D9180 /* MacMain.m in Sources */,
 				73CF1C47160061B7006D9180 /* KGNoise.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73CF1C56160068AD006D9180 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73CF1C81160069A1006D9180 /* iOSMain.m in Sources */,
+				73CF1C82160069A1006D9180 /* KGIOSAppDelegate.m in Sources */,
+				73CF1C8416006B6B006D9180 /* KGNoise.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,10 +301,50 @@
 			};
 			name = Release;
 		};
+		73CF1C79160068AD006D9180 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "KGIOSNoiseEample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		73CF1C7A160068AD006D9180 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "KGIOSNoiseEample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		73CF1C101600604E006D9180 /* Build configuration list for PBXProject "KGMacNoiseExample" */ = {
+		73CF1C101600604E006D9180 /* Build configuration list for PBXProject "KGNoiseExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				73CF1C321600604E006D9180 /* Debug */,
@@ -245,6 +358,15 @@
 			buildConfigurations = (
 				73CF1C351600604E006D9180 /* Debug */,
 				73CF1C361600604E006D9180 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		73CF1C78160068AD006D9180 /* Build configuration list for PBXNativeTarget "KGIOSNoiseEample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73CF1C79160068AD006D9180 /* Debug */,
+				73CF1C7A160068AD006D9180 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
