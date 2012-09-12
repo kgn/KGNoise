@@ -1,0 +1,9 @@
+xcuserdata
+.DS_Store
+html
+appledoc
+*.pyc
+user.*.espressostorage
+Sparkle/*.app
+*.zip
+PXListView

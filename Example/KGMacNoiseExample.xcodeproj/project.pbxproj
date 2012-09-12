@@ -8,27 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		73CF1C1B1600604E006D9180 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73CF1C1A1600604E006D9180 /* Cocoa.framework */; };
-		73CF1C251600604E006D9180 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 73CF1C231600604E006D9180 /* InfoPlist.strings */; };
-		73CF1C271600604E006D9180 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CF1C261600604E006D9180 /* main.m */; };
-		73CF1C2B1600604E006D9180 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 73CF1C291600604E006D9180 /* Credits.rtf */; };
-		73CF1C2E1600604E006D9180 /* KGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CF1C2D1600604E006D9180 /* KGAppDelegate.m */; };
-		73CF1C311600604E006D9180 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73CF1C2F1600604E006D9180 /* MainMenu.xib */; };
+		73CF1C4016006116006D9180 /* KGMacAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CF1C3E16006116006D9180 /* KGMacAppDelegate.m */; };
+		73CF1C4116006116006D9180 /* MacMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CF1C3F16006116006D9180 /* MacMain.m */; };
+		73CF1C4316006181006D9180 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73CF1C4216006181006D9180 /* MainMenu.xib */; };
+		73CF1C47160061B7006D9180 /* KGNoise.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CF1C46160061B7006D9180 /* KGNoise.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		73CF1C161600604E006D9180 /* KGNoiseExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KGNoiseExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		73CF1C161600604E006D9180 /* KGMacNoiseExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KGMacNoiseExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73CF1C1A1600604E006D9180 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		73CF1C1D1600604E006D9180 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		73CF1C1E1600604E006D9180 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		73CF1C1F1600604E006D9180 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		73CF1C221600604E006D9180 /* KGNoiseExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KGNoiseExample-Info.plist"; sourceTree = "<group>"; };
-		73CF1C241600604E006D9180 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		73CF1C261600604E006D9180 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		73CF1C281600604E006D9180 /* KGNoiseExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KGNoiseExample-Prefix.pch"; sourceTree = "<group>"; };
-		73CF1C2A1600604E006D9180 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		73CF1C2C1600604E006D9180 /* KGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KGAppDelegate.h; sourceTree = "<group>"; };
-		73CF1C2D1600604E006D9180 /* KGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KGAppDelegate.m; sourceTree = "<group>"; };
-		73CF1C301600604E006D9180 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		73CF1C3D16006116006D9180 /* KGMacAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGMacAppDelegate.h; sourceTree = "<group>"; };
+		73CF1C3E16006116006D9180 /* KGMacAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGMacAppDelegate.m; sourceTree = "<group>"; };
+		73CF1C3F16006116006D9180 /* MacMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MacMain.m; sourceTree = "<group>"; };
+		73CF1C4216006181006D9180 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		73CF1C45160061B7006D9180 /* KGNoise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KGNoise.h; path = ../KGNoise.h; sourceTree = "<group>"; };
+		73CF1C46160061B7006D9180 /* KGNoise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KGNoise.m; path = ../KGNoise.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,8 +42,8 @@
 		73CF1C0B1600604E006D9180 = {
 			isa = PBXGroup;
 			children = (
-				73CF1C201600604E006D9180 /* KGNoiseExample */,
-				73CF1C191600604E006D9180 /* Frameworks */,
+				73CF1C44160061A2006D9180 /* KGNoise */,
+				73CF1C3C160060C5006D9180 /* Mac Example */,
 				73CF1C171600604E006D9180 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,7 +51,7 @@
 		73CF1C171600604E006D9180 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				73CF1C161600604E006D9180 /* KGNoiseExample.app */,
+				73CF1C161600604E006D9180 /* KGMacNoiseExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -63,51 +59,40 @@
 		73CF1C191600604E006D9180 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				73CF1C1D1600604E006D9180 /* AppKit.framework */,
+				73CF1C1F1600604E006D9180 /* Foundation.framework */,
 				73CF1C1A1600604E006D9180 /* Cocoa.framework */,
-				73CF1C1C1600604E006D9180 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		73CF1C1C1600604E006D9180 /* Other Frameworks */ = {
+		73CF1C3C160060C5006D9180 /* Mac Example */ = {
 			isa = PBXGroup;
 			children = (
-				73CF1C1D1600604E006D9180 /* AppKit.framework */,
-				73CF1C1E1600604E006D9180 /* CoreData.framework */,
-				73CF1C1F1600604E006D9180 /* Foundation.framework */,
+				73CF1C3D16006116006D9180 /* KGMacAppDelegate.h */,
+				73CF1C3E16006116006D9180 /* KGMacAppDelegate.m */,
+				73CF1C3F16006116006D9180 /* MacMain.m */,
+				73CF1C4216006181006D9180 /* MainMenu.xib */,
+				73CF1C191600604E006D9180 /* Frameworks */,
 			);
-			name = "Other Frameworks";
+			name = "Mac Example";
 			sourceTree = "<group>";
 		};
-		73CF1C201600604E006D9180 /* KGNoiseExample */ = {
+		73CF1C44160061A2006D9180 /* KGNoise */ = {
 			isa = PBXGroup;
 			children = (
-				73CF1C2C1600604E006D9180 /* KGAppDelegate.h */,
-				73CF1C2D1600604E006D9180 /* KGAppDelegate.m */,
-				73CF1C2F1600604E006D9180 /* MainMenu.xib */,
-				73CF1C211600604E006D9180 /* Supporting Files */,
+				73CF1C45160061B7006D9180 /* KGNoise.h */,
+				73CF1C46160061B7006D9180 /* KGNoise.m */,
 			);
-			path = KGNoiseExample;
-			sourceTree = "<group>";
-		};
-		73CF1C211600604E006D9180 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				73CF1C221600604E006D9180 /* KGNoiseExample-Info.plist */,
-				73CF1C231600604E006D9180 /* InfoPlist.strings */,
-				73CF1C261600604E006D9180 /* main.m */,
-				73CF1C281600604E006D9180 /* KGNoiseExample-Prefix.pch */,
-				73CF1C291600604E006D9180 /* Credits.rtf */,
-			);
-			name = "Supporting Files";
+			name = KGNoise;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		73CF1C151600604E006D9180 /* KGNoiseExample */ = {
+		73CF1C151600604E006D9180 /* KGMacNoiseExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 73CF1C341600604E006D9180 /* Build configuration list for PBXNativeTarget "KGNoiseExample" */;
+			buildConfigurationList = 73CF1C341600604E006D9180 /* Build configuration list for PBXNativeTarget "KGMacNoiseExample" */;
 			buildPhases = (
 				73CF1C121600604E006D9180 /* Sources */,
 				73CF1C131600604E006D9180 /* Frameworks */,
@@ -117,9 +102,9 @@
 			);
 			dependencies = (
 			);
-			name = KGNoiseExample;
+			name = KGMacNoiseExample;
 			productName = KGNoiseExample;
-			productReference = 73CF1C161600604E006D9180 /* KGNoiseExample.app */;
+			productReference = 73CF1C161600604E006D9180 /* KGMacNoiseExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -132,7 +117,7 @@
 				LastUpgradeCheck = 0440;
 				ORGANIZATIONNAME = "David Keegan";
 			};
-			buildConfigurationList = 73CF1C101600604E006D9180 /* Build configuration list for PBXProject "KGNoiseExample" */;
+			buildConfigurationList = 73CF1C101600604E006D9180 /* Build configuration list for PBXProject "KGMacNoiseExample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -144,7 +129,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				73CF1C151600604E006D9180 /* KGNoiseExample */,
+				73CF1C151600604E006D9180 /* KGMacNoiseExample */,
 			);
 		};
 /* End PBXProject section */
@@ -154,9 +139,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73CF1C251600604E006D9180 /* InfoPlist.strings in Resources */,
-				73CF1C2B1600604E006D9180 /* Credits.rtf in Resources */,
-				73CF1C311600604E006D9180 /* MainMenu.xib in Resources */,
+				73CF1C4316006181006D9180 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,39 +150,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73CF1C271600604E006D9180 /* main.m in Sources */,
-				73CF1C2E1600604E006D9180 /* KGAppDelegate.m in Sources */,
+				73CF1C4016006116006D9180 /* KGMacAppDelegate.m in Sources */,
+				73CF1C4116006116006D9180 /* MacMain.m in Sources */,
+				73CF1C47160061B7006D9180 /* KGNoise.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		73CF1C231600604E006D9180 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				73CF1C241600604E006D9180 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		73CF1C291600604E006D9180 /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				73CF1C2A1600604E006D9180 /* en */,
-			);
-			name = Credits.rtf;
-			sourceTree = "<group>";
-		};
-		73CF1C2F1600604E006D9180 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				73CF1C301600604E006D9180 /* en */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		73CF1C321600604E006D9180 /* Debug */ = {
@@ -255,10 +212,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "KGNoiseExample/KGNoiseExample-Prefix.pch";
-				INFOPLIST_FILE = "KGNoiseExample/KGNoiseExample-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "KGMacNoiseExample-Info.plist";
+				PRODUCT_NAME = KGMacNoiseExample;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -267,10 +222,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "KGNoiseExample/KGNoiseExample-Prefix.pch";
-				INFOPLIST_FILE = "KGNoiseExample/KGNoiseExample-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "KGMacNoiseExample-Info.plist";
+				PRODUCT_NAME = KGMacNoiseExample;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -278,7 +231,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		73CF1C101600604E006D9180 /* Build configuration list for PBXProject "KGNoiseExample" */ = {
+		73CF1C101600604E006D9180 /* Build configuration list for PBXProject "KGMacNoiseExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				73CF1C321600604E006D9180 /* Debug */,
@@ -287,13 +240,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		73CF1C341600604E006D9180 /* Build configuration list for PBXNativeTarget "KGNoiseExample" */ = {
+		73CF1C341600604E006D9180 /* Build configuration list for PBXNativeTarget "KGMacNoiseExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				73CF1C351600604E006D9180 /* Debug */,
 				73CF1C361600604E006D9180 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
