@@ -7,11 +7,14 @@ KGNoise generates random black and white pixels into a static 128x128 image that
 KGNoise is **retina** compatible on both iOS and the Mac. An identical interface is provided for both platforms through the use of compile time `#if` checks.
 
 # Usage
+
 Add `KGNoise.h` and `KGNoise.m` to your project, then import `KGNoise.h`:
 
 ```
 #import "KGNoise.h"
 ```
+
+KGNoise is distributed under the MIT license, see the license file for more information.
 
 # KGNoise
 
