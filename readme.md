@@ -10,7 +10,7 @@ KGNoise is **retina** compatible on both iOS and the Mac. An identical interface
 
 Add `KGNoise.h` and `KGNoise.m` to your project, then import `KGNoise.h`:
 
-```
+```obj-c
 #import "KGNoise.h"
 ```
 
@@ -20,7 +20,7 @@ KGNoise is distributed under the MIT license, see the license file for more info
 
 `KGNoise` provides two generic noise drawing functions that you can use in your drawing code.
 
-```
+```obj-c
 + (void)drawNoiseWithOpacity:(CGFloat)opacity;
 + (void)drawNoiseWithOpacity:(CGFloat)opacity andBlendMode:(CGBlendMode)blendMode;
 ```
@@ -29,7 +29,7 @@ KGNoise is distributed under the MIT license, see the license file for more info
 
 There is also a subclass of `NSView` or `UIView`, depending on your platform, that you can use out of the box to draw noise on a solid color. The noise opacity, blending mode, and background color are all customizable.
 
-```
+```obj-c
 @property (strong, nonatomic) NSColor/UIColor *backgroundColor;
 @property (nonatomic) CGFloat noiseOpacity;
 @property (nonatomic) CGBlendMode noiseBlendMode;
