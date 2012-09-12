@@ -111,6 +111,17 @@
     }
 }
 
+- (void)setNoiseBlendMode:(CGBlendMode)noiseBlendMode{
+    if(_noiseBlendMode != noiseBlendMode){
+        _noiseBlendMode = noiseBlendMode;
+#if TARGET_OS_IPHONE
+        [self setNeedsDisplay];
+#else
+        [self setNeedsDisplay:YES];
+#endif
+    }
+}
+
 #if TARGET_OS_IPHONE
 - (void)drawRect:(CGRect)dirtyRect{
     CGContextRef context = UIGraphicsGetCurrentContext();    
