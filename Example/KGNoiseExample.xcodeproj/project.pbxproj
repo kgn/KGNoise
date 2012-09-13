@@ -18,6 +18,7 @@
 		73CF1C81160069A1006D9180 /* iOSMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CF1C7C160069A1006D9180 /* iOSMain.m */; };
 		73CF1C82160069A1006D9180 /* KGIOSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CF1C7E160069A1006D9180 /* KGIOSAppDelegate.m */; };
 		73CF1C8416006B6B006D9180 /* KGNoise.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CF1C46160061B7006D9180 /* KGNoise.m */; };
+		98FA88611602A22A0095CAB5 /* UIImage+KGNoise.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FA88601602A22A0095CAB5 /* UIImage+KGNoise.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		73CF1C7C160069A1006D9180 /* iOSMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iOSMain.m; sourceTree = "<group>"; };
 		73CF1C7D160069A1006D9180 /* KGIOSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGIOSAppDelegate.h; sourceTree = "<group>"; };
 		73CF1C7E160069A1006D9180 /* KGIOSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGIOSAppDelegate.m; sourceTree = "<group>"; };
+		98FA885F1602A22A0095CAB5 /* UIImage+KGNoise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+KGNoise.h"; sourceTree = "<group>"; };
+		98FA88601602A22A0095CAB5 /* UIImage+KGNoise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+KGNoise.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 			children = (
 				73CF1C45160061B7006D9180 /* KGNoise.h */,
 				73CF1C46160061B7006D9180 /* KGNoise.m */,
+				98FA885F1602A22A0095CAB5 /* UIImage+KGNoise.h */,
+				98FA88601602A22A0095CAB5 /* UIImage+KGNoise.m */,
 				73CF1C3C160060C5006D9180 /* Mac Example */,
 				73CF1C7B16006936006D9180 /* iOS Example */,
 				73CF1C171600604E006D9180 /* Products */,
@@ -226,6 +231,7 @@
 				73CF1C81160069A1006D9180 /* iOSMain.m in Sources */,
 				73CF1C82160069A1006D9180 /* KGIOSAppDelegate.m in Sources */,
 				73CF1C8416006B6B006D9180 /* KGNoise.m in Sources */,
+				98FA88611602A22A0095CAB5 /* UIImage+KGNoise.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
