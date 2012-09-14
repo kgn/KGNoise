@@ -27,6 +27,8 @@
                                                  kCGImageAlphaPremultipliedLast);
     CGColorSpaceRelease(colorSpace);
 	
+	CGContextSaveGState(context);
+	
     // Flip context
     CGContextTranslateCTM(context, 0, self.size.height * self.scale);
     CGContextScaleCTM(context, self.scale, -self.scale);
@@ -35,6 +37,10 @@
 	
     // Draw the image
     [self drawAtPoint:CGPointMake(0.0, 0.0)];
+	
+	CGContextRestoreGState(context);
+	
+	CGContextClipToMask(context, CGRectMake(0.0, 0.0, self.size.width * self.scale, self.size.height * self.scale), [self CGImage]);
 	
     // Noise on top
     [KGNoise drawNoiseWithOpacity:opacity andBlendMode:blendMode];
