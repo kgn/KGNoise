@@ -16,13 +16,16 @@
 }
 
 - (UIColor *)colorWithNoiseOpacity:(CGFloat)opacity andBlendMode:(CGBlendMode)blendMode{
-	// Create a context to draw in
+	// Figure out our screen scale, if it's a retina display we'll make the noise at twice the resolution
+	CGFloat screenScale = [[UIScreen mainScreen] scale];
+	
+	// Create a context to draw in	
 	CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
 	CGContextRef context = CGBitmapContextCreate(NULL,
-												 256.0,
-												 256.0,
+												 256.0 * screenScale,
+												 256.0 * screenScale,
 												 8, /* bits per channel */
-												 (256.0 * 4), /* 4 channels per pixel * numPixels/row */
+												 (256.0 * screenScale * 4), /* 4 channels per pixel * numPixels/row */
 												 colorSpace,
 												 kCGImageAlphaPremultipliedLast);
 	CGColorSpaceRelease(colorSpace);
@@ -31,7 +34,7 @@
 	
 	// Fill with the color
 	CGContextSetFillColorWithColor(context, [self CGColor]);
-	CGContextFillRect(context, CGRectMake(0.0, 0.0, 256.0, 256.0));
+	CGContextFillRect(context, CGRectMake(0.0, 0.0, 256.0 * screenScale, 256.0 * screenScale));
 	
 	// Noise on top
 	[KGNoise drawNoiseWithOpacity:opacity andBlendMode:blendMode];
