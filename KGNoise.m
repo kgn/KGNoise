@@ -21,7 +21,7 @@
         NSUInteger width = 128, height = width;
         NSUInteger size = width*height;
         char *rgba = (char *)malloc(size); srand(115);
-        for(NSUInteger i=0; i < size; ++i){rgba[i] = rand()%256;}
+        for(NSUInteger i=0; i < size; ++i){rgba[i] = (char)(rand()%256);}
         CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceGray();
         CGContextRef bitmapContext =
         CGBitmapContextCreate(rgba, width, height, 8, width, colorSpace, kCGImageAlphaNone);
@@ -53,7 +53,7 @@
     }
 #endif
 
-    CGRect imageRect = (CGRect){CGPointZero, CGImageGetWidth(noiseImageRef), CGImageGetHeight(noiseImageRef)};
+    CGRect imageRect = (CGRect){.origin = CGPointZero, .size = {CGImageGetWidth(noiseImageRef), CGImageGetHeight(noiseImageRef)}};
     CGContextDrawTiledImage(context, imageRect, noiseImageRef);
     CGContextRestoreGState(context);
 }
