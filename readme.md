@@ -1,6 +1,6 @@
 ![](https://raw.github.com/kgn/KGNoise/master/KGNoise.jpg)
 
-I've been developing this noise drawing code for quite some time. It all started with drawing noise in the title bar of [INAppStoreWindow](https://github.com/indragiek/INAppStoreWindow). The original implementation of the noise drawing for the titlebar used `CIFilter`, but this took up an unusual amount of memory and also didn't looks so great. So I began my quest for the best noise drawing solution, this project contains the third version which I feel is finally ready for prime time on the Mac and iOS! 
+I've been developing this noise drawing code for quite some time. It all started with drawing noise in the title bar of [INAppStoreWindow](https://github.com/indragiek/INAppStoreWindow). The original implementation of the noise drawing for the titlebar used `CIFilter`, but this took up an unusual amount of memory and also didn't look so great. So I began my quest for the best noise drawing solution, this project contains the third version which I feel is finally ready for prime time on the Mac and iOS! 
 
 KGNoise generates random black and white pixels into a static 128x128 image that is then tiled to fill the space. The random pixels are seeded with a value that has been chosen to look the most random, this also means that the noise will look consistent between app launches.
 
