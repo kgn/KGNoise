@@ -1,4 +1,4 @@
-![](https://raw.github.com/kgn/KGNoise/master/KGNoise.jpg)
+![](https://raw.github.com/kgn/KGNoise/master/screenshot.jpg)
 
 I've been developing this noise drawing code for quite some time. It all started with drawing noise in the title bar of [INAppStoreWindow](https://github.com/indragiek/INAppStoreWindow). The original implementation of the noise drawing for the titlebar used `CIFilter`, but this took up an unusual amount of memory and also didn't look so great. So I began my quest for the best noise drawing solution, this project contains the third version which I feel is finally ready for prime time on the Mac and iOS! 
 
@@ -36,6 +36,14 @@ There is also a subclass of `NSView` or `UIView`, depending on your platform, th
 ```
 
 Please note that the standard `backgroundColor` is used for `UIView`, but `backgroundColor` does not exist on `NSView` so it has been added to provide the exact same interface for both platforms.
+
+# KGNoiseLinearGradientView & KGNoiseRadialGradientView
+
+`KGNoiseLinearGradientView` and `KGNoiseRadialGradientView` inherit from `KGNoiseView` and draw a linear or radial gradient respectively. They provide one additional property to set the alternate background color to be used in the gradient.
+
+```obj-c
+@property (strong, nonatomic) NSColor/UIColor *alternateBackgroundColor;
+```
 
 # KGNoiseExample
 
