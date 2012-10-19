@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7324C77A16006DD4000A0863 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7324C77916006DD4000A0863 /* UIKit.framework */; };
-		7324C77C16006DDF000A0863 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7324C77B16006DDF000A0863 /* Foundation.framework */; };
-		7324C77E16006DFC000A0863 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7324C77D16006DFC000A0863 /* CoreGraphics.framework */; };
+		73279ECB1631D03A004B8A68 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73279ECA1631D03A004B8A68 /* CoreGraphics.framework */; };
+		73279ECD1631D044004B8A68 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73279ECC1631D044004B8A68 /* UIKit.framework */; };
+		73279ECF1631D051004B8A68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73279ECE1631D051004B8A68 /* Foundation.framework */; };
 		73B7BF08161FA49400024C46 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 73B7BF07161FA49400024C46 /* Default-568h@2x.png */; };
 		73CF1C1B1600604E006D9180 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73CF1C1A1600604E006D9180 /* Cocoa.framework */; };
 		73CF1C4016006116006D9180 /* KGMacAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CF1C3E16006116006D9180 /* KGMacAppDelegate.m */; };
@@ -22,9 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7324C77916006DD4000A0863 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		7324C77B16006DDF000A0863 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		7324C77D16006DFC000A0863 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		73279ECA1631D03A004B8A68 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		73279ECC1631D044004B8A68 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		73279ECE1631D051004B8A68 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		73B7BF07161FA49400024C46 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		73CF1C161600604E006D9180 /* KGMacNoiseExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KGMacNoiseExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73CF1C1A1600604E006D9180 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -55,9 +55,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7324C77E16006DFC000A0863 /* CoreGraphics.framework in Frameworks */,
-				7324C77C16006DDF000A0863 /* Foundation.framework in Frameworks */,
-				7324C77A16006DD4000A0863 /* UIKit.framework in Frameworks */,
+				73279ECF1631D051004B8A68 /* Foundation.framework in Frameworks */,
+				73279ECD1631D044004B8A68 /* UIKit.framework in Frameworks */,
+				73279ECB1631D03A004B8A68 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,9 +110,9 @@
 		73CF1C5C160068AD006D9180 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7324C77D16006DFC000A0863 /* CoreGraphics.framework */,
-				7324C77B16006DDF000A0863 /* Foundation.framework */,
-				7324C77916006DD4000A0863 /* UIKit.framework */,
+				73279ECE1631D051004B8A68 /* Foundation.framework */,
+				73279ECC1631D044004B8A68 /* UIKit.framework */,
+				73279ECA1631D03A004B8A68 /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

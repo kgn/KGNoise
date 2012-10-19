@@ -13,12 +13,16 @@
 #import <Cocoa/Cocoa.h>
 #endif
 
+#pragma mark - KGNoise
+
 @interface KGNoise : NSObject
 
 + (void)drawNoiseWithOpacity:(CGFloat)opacity;
 + (void)drawNoiseWithOpacity:(CGFloat)opacity andBlendMode:(CGBlendMode)blendMode;
 
 @end
+
+#pragma mark - KGNoiseView
 
 #if TARGET_OS_IPHONE
 @interface KGNoiseView : UIView
@@ -28,4 +32,24 @@
 #endif
 @property (nonatomic) CGFloat noiseOpacity;
 @property (nonatomic) CGBlendMode noiseBlendMode;
+@end
+
+#pragma mark - KGNoiseLinearGradientView
+
+@interface KGNoiseLinearGradientView : KGNoiseView
+#if TARGET_OS_IPHONE
+@property (strong, nonatomic) UIColor *alternateBackgroundColor;
+#else
+@property (strong, nonatomic) NSColor *alternateBackgroundColor;
+#endif
+@end
+
+#pragma mark - KGNoiseRadialGradientView
+
+@interface KGNoiseRadialGradientView : KGNoiseView
+#if TARGET_OS_IPHONE
+@property (strong, nonatomic) UIColor *alternateBackgroundColor;
+#else
+@property (strong, nonatomic) NSColor *alternateBackgroundColor;
+#endif
 @end
