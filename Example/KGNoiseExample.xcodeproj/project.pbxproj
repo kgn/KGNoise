@@ -67,7 +67,6 @@
 		73CF1C0B1600604E006D9180 = {
 			isa = PBXGroup;
 			children = (
-				73B7BF07161FA49400024C46 /* Default-568h@2x.png */,
 				73CF1C45160061B7006D9180 /* KGNoise.h */,
 				73CF1C46160061B7006D9180 /* KGNoise.m */,
 				73CF1C3C160060C5006D9180 /* Mac Example */,
@@ -123,6 +122,7 @@
 				73CF1C7C160069A1006D9180 /* iOSMain.m */,
 				73CF1C7D160069A1006D9180 /* KGIOSAppDelegate.h */,
 				73CF1C7E160069A1006D9180 /* KGIOSAppDelegate.m */,
+				73B7BF07161FA49400024C46 /* Default-568h@2x.png */,
 				73CF1C5C160068AD006D9180 /* Frameworks */,
 			);
 			name = "iOS Example";
