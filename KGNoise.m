@@ -267,7 +267,7 @@ CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *color2){
     CGGradientRef gradient = CGGradientCreateWithColorComponents(colorSpace, components, gradLocations, gradLocationsNum);
     CGColorSpaceRelease(colorSpace), colorSpace = NULL;
     CGPoint gradCenter= CGPointMake(round(CGRectGetMidX(bounds)), round(CGRectGetMidY(bounds)));
-    CGFloat gradRadius = MIN(CGRectGetWidth(bounds), CGRectGetHeight(bounds));
+    CGFloat gradRadius = sqrt(pow((CGRectGetHeight(bounds)/2), 2) + pow((CGRectGetWidth(bounds)/2), 2));
     CGContextDrawRadialGradient(context, gradient, gradCenter, 0, gradCenter, gradRadius, kCGGradientDrawsAfterEndLocation);
     CGGradientRelease(gradient), gradient = NULL;
     CGContextRestoreGState(context);
