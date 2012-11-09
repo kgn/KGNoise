@@ -25,6 +25,13 @@ KGNoise is distributed under the MIT license, see the license file for more info
 + (void)drawNoiseWithOpacity:(CGFloat)opacity andBlendMode:(CGBlendMode)blendMode;
 ```
 
+# UIColor/NSColor(KGNoise)
+
+```
+- (NSColor/UIColor *)colorWithNoiseWithOpacity:(CGFloat)opacity;
+- (NSColor/UIColor *)colorWithNoiseWithOpacity:(CGFloat)opacity andBlendMode:(CGBlendMode)blendMode;
+```
+
 # KGNoiseView
 
 There is also a subclass of `NSView` or `UIView`, depending on your platform, that you can use out of the box to draw noise on a solid color. The noise opacity, blending mode, and background color are all customizable.

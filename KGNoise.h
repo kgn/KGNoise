@@ -22,6 +22,20 @@
 
 @end
 
+#pragma mark - KGNoise Color
+
+#if TARGET_OS_IPHONE
+@interface UIColor(KGNoise)
+- (UIColor *)colorWithNoiseWithOpacity:(CGFloat)opacity;
+- (UIColor *)colorWithNoiseWithOpacity:(CGFloat)opacity andBlendMode:(CGBlendMode)blendMode;
+@end
+#else
+@interface NSColor(KGNoise)
+- (NSColor *)colorWithNoiseWithOpacity:(CGFloat)opacity;
+- (NSColor *)colorWithNoiseWithOpacity:(CGFloat)opacity andBlendMode:(CGBlendMode)blendMode;
+@end
+#endif
+
 #pragma mark - KGNoiseView
 
 #if TARGET_OS_IPHONE
