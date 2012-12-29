@@ -8,6 +8,44 @@
 
 #import "KGNoise.h"
 
+static NSUInteger const kImageSize = 128;
+
+#if TARGET_OS_IPHONE
+CGFloat *gradientComponentsForColors(UIColor *color1, UIColor *color2){
+#else
+CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *color2){
+#endif
+    CGFloat *components = malloc(8*sizeof(CGFloat));
+    const CGFloat *alternateBackgroundComponents = CGColorGetComponents([color1 CGColor]);
+    if(CGColorGetNumberOfComponents([color1 CGColor]) == 2){
+        components[0] = alternateBackgroundComponents[0];
+        components[1] = alternateBackgroundComponents[0];
+        components[2] = alternateBackgroundComponents[0];
+        components[3] = alternateBackgroundComponents[1];
+    }else{
+        components[0] = alternateBackgroundComponents[0];
+        components[1] = alternateBackgroundComponents[1];
+        components[2] = alternateBackgroundComponents[2];
+        components[3] = alternateBackgroundComponents[3];
+    }
+
+    const CGFloat *backgroundComponents = CGColorGetComponents([color2 CGColor]);
+    if(CGColorGetNumberOfComponents([color2 CGColor]) == 2){
+        components[4] = backgroundComponents[0];
+        components[5] = backgroundComponents[0];
+        components[6] = backgroundComponents[0];
+        components[7] = backgroundComponents[1];
+    }else{
+        components[4] = backgroundComponents[0];
+        components[5] = backgroundComponents[1];
+        components[6] = backgroundComponents[2];
+        components[7] = backgroundComponents[3];
+    }
+    return components;
+}
+
+#pragma mark - KGNoise
+
 @implementation KGNoise
 
 + (void)drawNoiseWithOpacity:(CGFloat)opacity{
@@ -18,7 +56,7 @@
     static CGImageRef noiseImageRef = nil;
     static dispatch_once_t oncePredicate;
     dispatch_once(&oncePredicate, ^{
-        NSUInteger width = 128, height = width;
+        NSUInteger width = kImageSize, height = width;
         NSUInteger size = width*height;
         char *rgba = (char *)malloc(size); srand(115);
         for(NSUInteger i=0; i < size; ++i){rgba[i] = (char)(rand()%256);}
@@ -59,6 +97,44 @@
 }
 
 @end
+
+#pragma mark - KGNoise Color
+
+#if TARGET_OS_IPHONE
+@implementation UIColor(KGNoise)
+- (UIColor *)colorWithNoiseWithOpacity:(CGFloat)opacity{
+    return [self colorWithNoiseWithOpacity:opacity andBlendMode:kCGBlendModeScreen];
+}
+- (UIColor *)colorWithNoiseWithOpacity:(CGFloat)opacity andBlendMode:(CGBlendMode)blendMode{
+    CGRect rect = {CGPointZero, kImageSize, kImageSize};
+    UIGraphicsBeginImageContextWithOptions(rect.size, YES, 0.0f);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [self setFill]; CGContextFillRect(context, rect);
+    [KGNoise drawNoiseWithOpacity:opacity andBlendMode:blendMode];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return [UIColor colorWithPatternImage:image];
+}
+@end
+#else
+@implementation NSColor(KGNoise)
+- (NSColor *)colorWithNoiseWithOpacity:(CGFloat)opacity{
+    return [self colorWithNoiseWithOpacity:opacity andBlendMode:kCGBlendModeScreen];    
+}
+- (NSColor *)colorWithNoiseWithOpacity:(CGFloat)opacity andBlendMode:(CGBlendMode)blendMode{
+    CGRect rect = {CGPointZero, kImageSize, kImageSize};
+    NSImage *image = [[NSImage alloc] initWithSize:rect.size];
+    [image lockFocus];
+    CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];  
+    [self setFill]; CGContextFillRect(context, rect);
+    [KGNoise drawNoiseWithOpacity:opacity andBlendMode:blendMode];
+    [image unlockFocus];
+    return [NSColor colorWithPatternImage:image];
+}
+@end
+#endif
+
+#pragma mark - KGNoiseView
 
 @implementation KGNoiseView
 
@@ -134,4 +210,107 @@
     [KGNoise drawNoiseWithOpacity:self.noiseOpacity andBlendMode:self.noiseBlendMode];
 }
 
+@end
+
+#pragma mark - KGNoiseLinearGradientView
+
+@implementation KGNoiseLinearGradientView
+
+#if TARGET_OS_IPHONE
+- (void)setAlternateBackgroundColor:(UIColor *)alternateBackgroundColor{
+    if(_alternateBackgroundColor != alternateBackgroundColor){
+        _alternateBackgroundColor = alternateBackgroundColor;
+        [self setNeedsDisplay];
+    }
+}
+#else
+- (void)setAlternateBackgroundColor:(NSColor *)alternateBackgroundColor{
+    if(_alternateBackgroundColor != alternateBackgroundColor){
+        _alternateBackgroundColor = alternateBackgroundColor;
+        [self setNeedsDisplay:YES];
+    }
+}
+#endif
+
+#if TARGET_OS_IPHONE
+- (void)drawRect:(CGRect)dirtyRect{
+    CGContextRef context = UIGraphicsGetCurrentContext();
+#else
+- (void)drawRect:(NSRect)dirtyRect{
+    CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];
+#endif
+    // if we don't have an alternate color draw solid
+    if(self.alternateBackgroundColor == nil){
+        [super drawRect:dirtyRect];
+        return;
+    }
+    
+    CGRect bounds = self.bounds;
+    CGContextSaveGState(context);    
+    CGColorSpaceRef baseSpace = CGColorSpaceCreateDeviceRGB();
+    CGFloat *components = gradientComponentsForColors(self.alternateBackgroundColor, self.backgroundColor);    
+    CGGradientRef gradient = CGGradientCreateWithColorComponents(baseSpace, components, NULL, 2);
+    CGColorSpaceRelease(baseSpace), baseSpace = NULL;
+    CGPoint startPoint = CGPointMake(CGRectGetMidX(bounds), CGRectGetMinY(bounds));
+    CGPoint endPoint = CGPointMake(CGRectGetMidX(bounds), CGRectGetMaxY(bounds));
+    CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, 0);
+    CGGradientRelease(gradient), gradient = NULL;
+    CGContextRestoreGState(context);
+    free(components);
+    
+    [KGNoise drawNoiseWithOpacity:self.noiseOpacity andBlendMode:self.noiseBlendMode];
+}
+    
+@end
+
+#pragma mark - KGNoiseRadialGradientView
+
+@implementation KGNoiseRadialGradientView
+
+#if TARGET_OS_IPHONE
+- (void)setAlternateBackgroundColor:(UIColor *)alternateBackgroundColor{
+    if(_alternateBackgroundColor != alternateBackgroundColor){
+        _alternateBackgroundColor = alternateBackgroundColor;
+        [self setNeedsDisplay];
+    }
+}
+#else
+- (void)setAlternateBackgroundColor:(NSColor *)alternateBackgroundColor{
+    if(_alternateBackgroundColor != alternateBackgroundColor){
+        _alternateBackgroundColor = alternateBackgroundColor;
+        [self setNeedsDisplay:YES];
+    }
+}
+#endif
+
+#if TARGET_OS_IPHONE
+- (void)drawRect:(CGRect)dirtyRect{
+    CGContextRef context = UIGraphicsGetCurrentContext();
+#else
+- (void)drawRect:(NSRect)dirtyRect{
+    CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];
+#endif
+    // if we don't have an alternate color draw solid
+    if(self.alternateBackgroundColor == nil){
+        [super drawRect:dirtyRect];
+        return;
+    }
+    
+    CGRect bounds = self.bounds;
+    CGContextSaveGState(context);
+    size_t gradLocationsNum = 2;
+    CGFloat gradLocations[2] = {0.0f, 1.0f};
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGFloat *components = gradientComponentsForColors(self.alternateBackgroundColor, self.backgroundColor);
+    CGGradientRef gradient = CGGradientCreateWithColorComponents(colorSpace, components, gradLocations, gradLocationsNum);
+    CGColorSpaceRelease(colorSpace), colorSpace = NULL;
+    CGPoint gradCenter= CGPointMake(round(CGRectGetMidX(bounds)), round(CGRectGetMidY(bounds)));
+    CGFloat gradRadius = sqrt(pow((CGRectGetHeight(bounds)/2), 2) + pow((CGRectGetWidth(bounds)/2), 2));
+    CGContextDrawRadialGradient(context, gradient, gradCenter, 0, gradCenter, gradRadius, kCGGradientDrawsAfterEndLocation);
+    CGGradientRelease(gradient), gradient = NULL;
+    CGContextRestoreGState(context);
+    free(components);
+    
+    [KGNoise drawNoiseWithOpacity:self.noiseOpacity andBlendMode:self.noiseBlendMode];
+}
 @end

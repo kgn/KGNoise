@@ -11,11 +11,13 @@
 @implementation KGMacAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification{
-    self.viewLeft.backgroundColor = [NSColor darkGrayColor];
+    self.viewLeft.backgroundColor = [NSColor colorWithCalibratedRed:0.363 green:0.700 blue:0.909 alpha:1.000];
+    self.viewLeft.alternateBackgroundColor = [NSColor colorWithCalibratedRed:0.307 green:0.455 blue:0.909 alpha:1.000];
     self.viewLeft.noiseBlendMode = kCGBlendModeMultiply;
     self.viewLeft.noiseOpacity = 0.1;
 
-    self.viewRight.backgroundColor = [NSColor lightGrayColor];
+    self.viewRight.backgroundColor = [NSColor colorWithCalibratedWhite:0.500 alpha:1.000];
+    self.viewRight.alternateBackgroundColor = [NSColor colorWithCalibratedWhite:0.750 alpha:1.000];
     self.viewRight.noiseOpacity = 0.2;
 }
 

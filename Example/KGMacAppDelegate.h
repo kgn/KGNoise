@@ -12,7 +12,7 @@
 @interface KGMacAppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
-@property (weak) IBOutlet KGNoiseView *viewLeft;
-@property (weak) IBOutlet KGNoiseView *viewRight;
+@property (weak) IBOutlet KGNoiseLinearGradientView *viewLeft;
+@property (weak) IBOutlet KGNoiseRadialGradientView *viewRight;
 
 @end
