@@ -11,9 +11,9 @@
 static NSUInteger const kImageSize = 128;
 
 #if TARGET_OS_IPHONE
-CGFloat *gradientComponentsForColors(UIColor *color1, UIColor *color2){
+static CGFloat *gradientComponentsForColors(UIColor *color1, UIColor *color2){
 #else
-CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *color2){
+static CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *color2){
 #endif
     CGFloat *components = malloc(8*sizeof(CGFloat));
     const CGFloat *alternateBackgroundComponents = CGColorGetComponents([color1 CGColor]);
