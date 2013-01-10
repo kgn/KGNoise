@@ -215,6 +215,11 @@ CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *color2){
 #pragma mark - KGNoiseLinearGradientView
 
 @implementation KGNoiseLinearGradientView
+    
+- (void)setup{
+    [super setup];
+    self.gradientDirection = KGLinearGradientDirection270Degrees;
+}
 
 #if TARGET_OS_IPHONE
 - (void)setAlternateBackgroundColor:(UIColor *)alternateBackgroundColor{
@@ -251,8 +256,27 @@ CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *color2){
     CGFloat *components = gradientComponentsForColors(self.alternateBackgroundColor, self.backgroundColor);    
     CGGradientRef gradient = CGGradientCreateWithColorComponents(baseSpace, components, NULL, 2);
     CGColorSpaceRelease(baseSpace), baseSpace = NULL;
-    CGPoint startPoint = CGPointMake(CGRectGetMidX(bounds), CGRectGetMinY(bounds));
-    CGPoint endPoint = CGPointMake(CGRectGetMidX(bounds), CGRectGetMaxY(bounds));
+    CGPoint startPoint;
+    CGPoint endPoint;
+    switch (self.gradientDirection) {
+        case KGLinearGradientDirection0Degrees:
+            startPoint = CGPointMake(CGRectGetMinX(bounds), CGRectGetMidY(bounds));
+            endPoint = CGPointMake(CGRectGetMaxX(bounds), CGRectGetMidY(bounds));
+            break;
+        case KGLinearGradientDirection90Degrees:
+            startPoint = CGPointMake(CGRectGetMidX(bounds), CGRectGetMaxY(bounds));
+            endPoint = CGPointMake(CGRectGetMidX(bounds), CGRectGetMinY(bounds));
+            break;
+        case KGLinearGradientDirection180Degrees:
+            startPoint = CGPointMake(CGRectGetMaxX(bounds), CGRectGetMidY(bounds));
+            endPoint = CGPointMake(CGRectGetMinX(bounds), CGRectGetMidY(bounds));
+            break;
+        case KGLinearGradientDirection270Degrees:
+        default:
+            startPoint = CGPointMake(CGRectGetMidX(bounds), CGRectGetMinY(bounds));
+            endPoint = CGPointMake(CGRectGetMidX(bounds), CGRectGetMaxY(bounds));
+            break;
+    }
     CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, 0);
     CGGradientRelease(gradient), gradient = NULL;
     CGContextRestoreGState(context);
