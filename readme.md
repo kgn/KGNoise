@@ -46,10 +46,16 @@ Please note that the standard `backgroundColor` is used for `UIView`, but `backg
 
 # KGNoiseLinearGradientView & KGNoiseRadialGradientView
 
-`KGNoiseLinearGradientView` and `KGNoiseRadialGradientView` inherit from `KGNoiseView` and draw a linear or radial gradient respectively. They provide one additional property to set the alternate background color to be used in the gradient.
+`KGNoiseLinearGradientView` and `KGNoiseRadialGradientView` inherit from `KGNoiseView` and draw a linear or radial gradient respectively. They provide a property to set the alternate background color to be used in the gradient.
 
 ```obj-c
 @property (strong, nonatomic) NSColor/UIColor *alternateBackgroundColor;
+```
+
+In addition, KGNoiseLinearGradientView provides a property to set gradient direction to 0, 90, 180, or 270 degrees.
+
+```obj-c
+@property (nonatomic) KGLinearGradientDirection gradientDirection;
 ```
 
 # KGNoiseExample
