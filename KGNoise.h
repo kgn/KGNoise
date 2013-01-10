@@ -50,12 +50,12 @@
 
 #pragma mark - KGNoiseLinearGradientView
 
-typedef enum {
+NS_ENUM(NSUInteger, KGLinearGradientDirection){
     KGLinearGradientDirection0Degrees, // Left to Right
     KGLinearGradientDirection90Degrees, // Bottom to Top
     KGLinearGradientDirection180Degrees, // Right to Left
     KGLinearGradientDirection270Degrees // Top to Bottom
-} KGLinearGradientDirection;
+};
 
 @interface KGNoiseLinearGradientView : KGNoiseView
 #if TARGET_OS_IPHONE
@@ -63,7 +63,7 @@ typedef enum {
 #else
 @property (strong, nonatomic) NSColor *alternateBackgroundColor;
 #endif
-@property (nonatomic) KGLinearGradientDirection gradientDirection;
+@property (nonatomic) enum KGLinearGradientDirection gradientDirection;
 @end
 
 #pragma mark - KGNoiseRadialGradientView
