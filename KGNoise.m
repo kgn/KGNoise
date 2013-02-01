@@ -8,7 +8,7 @@
 
 #import "KGNoise.h"
 
-static NSUInteger const kImageSize = 128;
+static NSUInteger const kKGNoiseImageSize = 128;
 
 #if TARGET_OS_IPHONE
 static CGFloat *gradientComponentsForColors(UIColor *color1, UIColor *color2);
@@ -58,7 +58,7 @@ static CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *color2){
     static CGImageRef noiseImageRef = nil;
     static dispatch_once_t oncePredicate;
     dispatch_once(&oncePredicate, ^{
-        NSUInteger width = kImageSize, height = width;
+        NSUInteger width = kKGNoiseImageSize, height = width;
         NSUInteger size = width*height;
         char *rgba = (char *)malloc(size); srand(115);
         for(NSUInteger i=0; i < size; ++i){rgba[i] = rand()%256;}
@@ -108,7 +108,7 @@ static CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *color2){
     return [self colorWithNoiseWithOpacity:opacity andBlendMode:kCGBlendModeScreen];
 }
 - (UIColor *)colorWithNoiseWithOpacity:(CGFloat)opacity andBlendMode:(CGBlendMode)blendMode{
-    CGRect rect = {CGPointZero, kImageSize, kImageSize};
+    CGRect rect = {CGPointZero, kKGNoiseImageSize, kKGNoiseImageSize};
     UIGraphicsBeginImageContextWithOptions(rect.size, YES, 0.0f);
     CGContextRef context = UIGraphicsGetCurrentContext();
     [self setFill]; CGContextFillRect(context, rect);
@@ -124,7 +124,7 @@ static CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *color2){
     return [self colorWithNoiseWithOpacity:opacity andBlendMode:kCGBlendModeScreen];    
 }
 - (NSColor *)colorWithNoiseWithOpacity:(CGFloat)opacity andBlendMode:(CGBlendMode)blendMode{
-    CGRect rect = {CGPointZero, kImageSize, kImageSize};
+    CGRect rect = {CGPointZero, kKGNoiseImageSize, kKGNoiseImageSize};
     NSImage *image = [[NSImage alloc] initWithSize:rect.size];
     [image lockFocus];
     CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];  
