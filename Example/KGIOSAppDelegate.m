@@ -21,6 +21,12 @@
     noiseView.noiseOpacity = 0.3;
     [self.window.rootViewController.view addSubview:noiseView];
 
+    UIImage *image = [[UIImage imageNamed:@"button"] imageWithNoiseOpacity:0.2 andBlendMode:kCGBlendModeDarken];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    imageView.frame = CGRectOffset(imageView.frame, round(CGRectGetMidX(noiseView.bounds)-CGRectGetMidX(imageView.bounds)),
+                                   round(CGRectGetMidY(noiseView.bounds)-CGRectGetMidY(imageView.bounds)));
+    [noiseView addSubview:imageView];
+
     CGRect noiseToolbarViewRect = self.window.rootViewController.view.bounds;
     noiseToolbarViewRect.size.height = 48;
     noiseToolbarViewRect.origin.y = CGRectGetHeight(self.window.rootViewController.view.bounds)-CGRectGetHeight(noiseToolbarViewRect);

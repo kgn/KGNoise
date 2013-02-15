@@ -36,6 +36,20 @@
 @end
 #endif
 
+#pragma mark - KGNoise Image
+
+#if TARGET_OS_IPHONE
+@interface UIImage(KGNoise)
+- (UIImage *)imageWithNoiseOpacity:(CGFloat)opacity;
+- (UIImage *)imageWithNoiseOpacity:(CGFloat)opacity andBlendMode:(CGBlendMode)blendMode;
+@end
+#else
+@interface NSImage(KGNoise)
+- (NSImage *)imageWithNoiseOpacity:(CGFloat)opacity;
+- (NSImage *)imageWithNoiseOpacity:(CGFloat)opacity andBlendMode:(CGBlendMode)blendMode;
+@end
+#endif
+
 #pragma mark - KGNoiseView
 
 #if TARGET_OS_IPHONE

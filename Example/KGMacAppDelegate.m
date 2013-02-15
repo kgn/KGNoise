@@ -19,6 +19,8 @@
     self.viewRight.backgroundColor = [NSColor colorWithCalibratedWhite:0.500 alpha:1.000];
     self.viewRight.alternateBackgroundColor = [NSColor colorWithCalibratedWhite:0.750 alpha:1.000];
     self.viewRight.noiseOpacity = 0.2;
+
+    self.imageView.image = [[NSImage imageNamed:@"button"] imageWithNoiseOpacity:0.2 andBlendMode:kCGBlendModeDarken];
 }
 
 @end

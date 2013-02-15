@@ -139,6 +139,50 @@ static inline CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *col
 @end
 #endif
 
+#pragma mark - KGNoise Image
+
+#if TARGET_OS_IPHONE
+@implementation UIImage(KGNoise)
+- (UIImage *)imageWithNoiseOpacity:(CGFloat)opacity{
+    return [self imageWithNoiseOpacity:opacity andBlendMode:kCGBlendModeScreen];
+}
+- (UIImage *)imageWithNoiseOpacity:(CGFloat)opacity andBlendMode:(CGBlendMode)blendMode{
+    CGRect rect = {CGPointZero, self.size};
+    UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0.0f);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSaveGState(context);
+    [self drawAtPoint:CGPointZero];
+    CGContextScaleCTM(context, 1, -1);
+    CGContextTranslateCTM(context, 0, -CGRectGetHeight(rect));
+    CGContextClipToMask(context, rect, [self CGImage]);
+    [KGNoise drawNoiseWithOpacity:opacity andBlendMode:blendMode];
+    CGContextRestoreGState(context);    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+@end
+#else
+@implementation NSImage(KGNoise)
+- (NSImage *)imageWithNoiseOpacity:(CGFloat)opacity{
+    return [self imageWithNoiseOpacity:opacity andBlendMode:kCGBlendModeScreen];
+}
+- (NSImage *)imageWithNoiseOpacity:(CGFloat)opacity andBlendMode:(CGBlendMode)blendMode{
+    CGRect rect = {CGPointZero, self.size};
+    NSImage *image = [[NSImage alloc] initWithSize:rect.size];
+    [image lockFocus];
+    CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];
+    CGContextSaveGState(context);
+    [self drawAtPoint:CGPointZero fromRect:CGRectZero operation:NSCompositeSourceOver fraction:1];
+    CGContextClipToMask(context, rect, [self CGImageForProposedRect:NULL context:[NSGraphicsContext currentContext] hints:nil]);
+    [KGNoise drawNoiseWithOpacity:opacity andBlendMode:blendMode];
+    CGContextRestoreGState(context);
+    [image unlockFocus];
+    return image;
+}
+@end
+#endif
+
 #pragma mark - KGNoiseView
 
 @implementation KGNoiseView
