@@ -10,6 +10,11 @@
 
 static NSUInteger const kKGNoiseImageSize = 128;
 
+NSInteger kgnoise_rseed = 115;
+static inline NSInteger kgnoise_rand(){
+	return (kgnoise_rseed = (kgnoise_rseed * 214013 + 2531011) & ((1U << 31) - 1)) >> 16;
+}
+
 #if TARGET_OS_IPHONE
 static inline CGFloat *gradientComponentsForColors(UIColor *color1, UIColor *color2){
 #else
@@ -58,8 +63,8 @@ static inline CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *col
     dispatch_once(&oncePredicate, ^{
         NSUInteger width = kKGNoiseImageSize, height = width;
         NSUInteger size = width*height;
-        char *rgba = (char *)malloc(size); srand(115);
-        for(NSUInteger i=0; i < size; ++i){rgba[i] = rand()%256;}
+        char *rgba = (char *)malloc(size);
+        for(NSUInteger i=0; i < size; ++i){rgba[i] = kgnoise_rand()%256;}
         CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceGray();
         CGContextRef bitmapContext =
         CGBitmapContextCreate(rgba, width, height, 8, width, colorSpace, kCGImageAlphaNone);
