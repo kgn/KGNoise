@@ -208,6 +208,7 @@ static inline CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *col
 - (void)setup{
 #if TARGET_OS_IPHONE
     self.backgroundColor = [UIColor grayColor];
+    self.contentMode = UIViewContentModeRedraw;
 #else
     self.backgroundColor = [NSColor grayColor];
 #endif
