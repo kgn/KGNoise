@@ -188,9 +188,9 @@ static inline CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *col
 @implementation KGNoiseView
 
 #if TARGET_OS_IPHONE
-- (id)initWithFrame:(CGRect)frameRect{
+- (instancetype)initWithFrame:(CGRect)frameRect{
 #else
-- (id)initWithFrame:(NSRect)frameRect{
+- (instancetype)initWithFrame:(NSRect)frameRect{
 #endif
     if((self = [super initWithFrame:frameRect])){
         [self setup];
@@ -198,7 +198,7 @@ static inline CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *col
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder{
+- (instancetype)initWithCoder:(NSCoder *)aDecoder{
     if((self = [super initWithCoder:aDecoder])){
         [self setup];
     }
