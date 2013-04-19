@@ -63,15 +63,17 @@ static inline CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *col
     dispatch_once(&oncePredicate, ^{
         NSUInteger width = kKGNoiseImageSize, height = width;
         NSUInteger size = width*height;
-        char *rgba = (char *)malloc(size);
-        for(NSUInteger i=0; i < size; ++i){rgba[i] = kgnoise_rand()%256;}
+        char *bitmapData = (char *)malloc(size);
+        for(NSUInteger i=0; i < size; ++i){
+            bitmapData[i] = kgnoise_rand()%256;
+        }
         CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceGray();
         CGContextRef bitmapContext =
-        CGBitmapContextCreate(rgba, width, height, 8, width, colorSpace, kCGImageAlphaNone);
+        CGBitmapContextCreate(bitmapData, width, height, 8, width, colorSpace, kCGImageAlphaNone);
         CFRelease(colorSpace);
         noiseImageRef = CGBitmapContextCreateImage(bitmapContext);
         CFRelease(bitmapContext);
-        free(rgba);
+        free(bitmapData);
     });
 
 #if TARGET_OS_IPHONE
