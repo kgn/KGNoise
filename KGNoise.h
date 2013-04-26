@@ -64,7 +64,7 @@
 
 #pragma mark - KGNoiseLinearGradientView
 
-NS_ENUM(NSUInteger, KGLinearGradientDirection){
+typedef NS_ENUM(NSUInteger, KGLinearGradientDirection){
     KGLinearGradientDirection0Degrees, // Left to Right
     KGLinearGradientDirection90Degrees, // Bottom to Top
     KGLinearGradientDirection180Degrees, // Right to Left
