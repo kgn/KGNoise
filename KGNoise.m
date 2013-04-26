@@ -20,7 +20,7 @@ static inline CGFloat *gradientComponentsForColors(UIColor *color1, UIColor *col
 #else
 static inline CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *color2){
 #endif
-    CGFloat *components = malloc(8*sizeof(CGFloat));
+    CGFloat *components = (CGFloat *)malloc(8*sizeof(CGFloat));
     const CGFloat *alternateBackgroundComponents = CGColorGetComponents([color1 CGColor]);
     if(CGColorGetNumberOfComponents([color1 CGColor]) == 2){
         components[0] = alternateBackgroundComponents[0];
@@ -98,7 +98,7 @@ static inline CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *col
     }
 #endif
 
-    CGRect imageRect = (CGRect){CGPointZero, CGImageGetWidth(noiseImageRef), CGImageGetHeight(noiseImageRef)};
+    CGRect imageRect = (CGRect){CGPointZero, {(CGFloat)CGImageGetWidth(noiseImageRef), (CGFloat)CGImageGetHeight(noiseImageRef)}};
     CGContextDrawTiledImage(context, imageRect, noiseImageRef);
     CGContextRestoreGState(context);
 }
