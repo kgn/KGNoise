@@ -77,7 +77,7 @@ typedef NS_ENUM(NSUInteger, KGLinearGradientDirection){
 #else
 @property (strong, nonatomic) NSColor *alternateBackgroundColor;
 #endif
-@property (nonatomic) enum KGLinearGradientDirection gradientDirection;
+@property (nonatomic) KGLinearGradientDirection gradientDirection;
 @end
 
 #pragma mark - KGNoiseRadialGradientView
