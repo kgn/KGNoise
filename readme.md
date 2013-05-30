@@ -27,14 +27,14 @@ KGNoise is distributed under the MIT license, see the license file for more info
 
 # UIColor/NSColor(KGNoise)
 
-```
+```obj-c
 - (NSColor/UIColor *)colorWithNoiseWithOpacity:(CGFloat)opacity;
 - (NSColor/UIColor *)colorWithNoiseWithOpacity:(CGFloat)opacity andBlendMode:(CGBlendMode)blendMode;
 ```
 
 # UIImage/NSImage(KGNoise)
 
-```
+```obj-c
 - (UIImage/NSImage *)imageWithNoiseOpacity:(CGFloat)opacity;
 - (UIImage/NSImage *)imageWithNoiseOpacity:(CGFloat)opacity andBlendMode:(CGBlendMode)blendMode;
 ```
