@@ -16,15 +16,25 @@
 	self.window.rootViewController = [[UIViewController alloc] init];
 
     KGNoiseRadialGradientView *noiseView = [[KGNoiseRadialGradientView alloc] initWithFrame:self.window.rootViewController.view.bounds];
+    noiseView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     noiseView.backgroundColor = [UIColor colorWithRed:0.814 green:0.798 blue:0.747 alpha:1.000];
     noiseView.alternateBackgroundColor = [UIColor colorWithRed:1.000 green:0.986 blue:0.945 alpha:1.000];
     noiseView.noiseOpacity = 0.3;
     [self.window.rootViewController.view addSubview:noiseView];
 
+    UIImage *image = [[UIImage imageNamed:@"button"] imageWithNoiseOpacity:0.2 andBlendMode:kCGBlendModeDarken];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    imageView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
+    imageView.frame = CGRectOffset(imageView.frame, round(CGRectGetMidX(noiseView.bounds)-CGRectGetMidX(imageView.bounds)),
+                                   round(CGRectGetMidY(noiseView.bounds)-CGRectGetMidY(imageView.bounds)));
+    [noiseView addSubview:imageView];
+
     CGRect noiseToolbarViewRect = self.window.rootViewController.view.bounds;
     noiseToolbarViewRect.size.height = 48;
     noiseToolbarViewRect.origin.y = CGRectGetHeight(self.window.rootViewController.view.bounds)-CGRectGetHeight(noiseToolbarViewRect);
     KGNoiseLinearGradientView *noiseToolbarView = [[KGNoiseLinearGradientView alloc] initWithFrame:noiseToolbarViewRect];
+    noiseToolbarView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
     noiseToolbarView.backgroundColor = [UIColor colorWithWhite:0.102 alpha:1.000];
     noiseToolbarView.alternateBackgroundColor = [UIColor colorWithWhite:0.250 alpha:1.000];
     noiseToolbarView.noiseBlendMode = kCGBlendModeMultiply;
@@ -34,6 +44,7 @@
     CGRect noiseNavbarViewRect = self.window.rootViewController.view.bounds;
     noiseNavbarViewRect.size.height = 48;
     KGNoiseLinearGradientView *noiseNavbarView = [[KGNoiseLinearGradientView alloc] initWithFrame:noiseNavbarViewRect];
+    noiseNavbarView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
     noiseNavbarView.backgroundColor = [UIColor colorWithRed:0.307 green:0.455 blue:0.909 alpha:1.000];
     noiseNavbarView.alternateBackgroundColor = [UIColor colorWithRed:0.363 green:0.700 blue:0.909 alpha:1.000];
     noiseNavbarView.noiseBlendMode = kCGBlendModeMultiply;

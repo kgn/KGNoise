@@ -36,6 +36,20 @@
 @end
 #endif
 
+#pragma mark - KGNoise Image
+
+#if TARGET_OS_IPHONE
+@interface UIImage(KGNoise)
+- (UIImage *)imageWithNoiseOpacity:(CGFloat)opacity;
+- (UIImage *)imageWithNoiseOpacity:(CGFloat)opacity andBlendMode:(CGBlendMode)blendMode;
+@end
+#else
+@interface NSImage(KGNoise)
+- (NSImage *)imageWithNoiseOpacity:(CGFloat)opacity;
+- (NSImage *)imageWithNoiseOpacity:(CGFloat)opacity andBlendMode:(CGBlendMode)blendMode;
+@end
+#endif
+
 #pragma mark - KGNoiseView
 
 #if TARGET_OS_IPHONE
@@ -50,12 +64,20 @@
 
 #pragma mark - KGNoiseLinearGradientView
 
+typedef NS_ENUM(NSUInteger, KGLinearGradientDirection){
+    KGLinearGradientDirection0Degrees, // Left to Right
+    KGLinearGradientDirection90Degrees, // Bottom to Top
+    KGLinearGradientDirection180Degrees, // Right to Left
+    KGLinearGradientDirection270Degrees // Top to Bottom
+};
+
 @interface KGNoiseLinearGradientView : KGNoiseView
 #if TARGET_OS_IPHONE
 @property (strong, nonatomic) UIColor *alternateBackgroundColor;
 #else
 @property (strong, nonatomic) NSColor *alternateBackgroundColor;
 #endif
+@property (nonatomic) KGLinearGradientDirection gradientDirection;
 @end
 
 #pragma mark - KGNoiseRadialGradientView

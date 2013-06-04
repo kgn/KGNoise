@@ -14,5 +14,6 @@
 @property (assign) IBOutlet NSWindow *window;
 @property (weak) IBOutlet KGNoiseLinearGradientView *viewLeft;
 @property (weak) IBOutlet KGNoiseRadialGradientView *viewRight;
+@property (weak) IBOutlet NSImageView *imageView;
 
 @end
