@@ -65,7 +65,7 @@ static inline CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *col
         NSUInteger size = width*height;
         char *bitmapData = (char *)malloc(size);
         for(NSUInteger i=0; i < size; ++i){
-            bitmapData[i] = kgnoise_rand()%256;
+            bitmapData[i] = (char)(kgnoise_rand()%256);
         }
         CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceGray();
         CGContextRef bitmapContext =
