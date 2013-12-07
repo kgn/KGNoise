@@ -65,7 +65,7 @@ static inline CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *col
         NSUInteger size = width*height;
         char *bitmapData = (char *)malloc(size);
         for(NSUInteger i=0; i < size; ++i){
-            bitmapData[i] = kgnoise_rand()%256;
+            bitmapData[i] = (char)(kgnoise_rand()%256);
         }
         CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceGray();
         CGContextRef bitmapContext =
@@ -113,7 +113,7 @@ static inline CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *col
     return [self colorWithNoiseWithOpacity:opacity andBlendMode:kCGBlendModeScreen];
 }
 - (UIColor *)colorWithNoiseWithOpacity:(CGFloat)opacity andBlendMode:(CGBlendMode)blendMode{
-    CGRect rect = {CGPointZero, kKGNoiseImageSize, kKGNoiseImageSize};
+    CGRect rect = {CGPointZero, {kKGNoiseImageSize, kKGNoiseImageSize}};
     UIGraphicsBeginImageContextWithOptions(rect.size, YES, 0.0f);
     CGContextRef context = UIGraphicsGetCurrentContext();
     [self setFill]; CGContextFillRect(context, rect);
@@ -129,7 +129,7 @@ static inline CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *col
     return [self colorWithNoiseWithOpacity:opacity andBlendMode:kCGBlendModeScreen];    
 }
 - (NSColor *)colorWithNoiseWithOpacity:(CGFloat)opacity andBlendMode:(CGBlendMode)blendMode{
-    CGRect rect = {CGPointZero, kKGNoiseImageSize, kKGNoiseImageSize};
+    CGRect rect = {CGPointZero, {kKGNoiseImageSize, kKGNoiseImageSize}};
     NSImage *image = [[NSImage alloc] initWithSize:rect.size];
     [image lockFocus];
     CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];  
