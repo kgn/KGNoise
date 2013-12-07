@@ -209,10 +209,14 @@ static inline CGFloat *gradientComponentsForColors(NSColor *color1, NSColor *col
 
 - (void)setup{
 #if TARGET_OS_IPHONE
-    self.backgroundColor = [UIColor grayColor];
+    if(!self.backgroundColor){
+        self.backgroundColor = [UIColor grayColor];
+    }
     self.contentMode = UIViewContentModeRedraw;
 #else
-    self.backgroundColor = [NSColor grayColor];
+    if(!self.backgroundColor){
+        self.backgroundColor = [NSColor grayColor];
+    }
 #endif
     self.noiseOpacity = 0.1;
     self.noiseBlendMode = kCGBlendModeScreen;
