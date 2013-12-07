@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F73B6066-C00A-4736-A4F0-AA6324119188</string>
+	<key>IDESourceControlProjectName</key>
+	<string>KGNoiseExample</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B535CC3B-AA49-4017-A6CD-D3F5127DE69A</key>
+		<string>https://github.com/kgn/KGNoise.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Example/KGNoiseExample.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B535CC3B-AA49-4017-A6CD-D3F5127DE69A</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/kgn/KGNoise.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B535CC3B-AA49-4017-A6CD-D3F5127DE69A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B535CC3B-AA49-4017-A6CD-D3F5127DE69A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>KGNoise</string>
+		</dict>
+	</array>
+</dict>
+</plist>
